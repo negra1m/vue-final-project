@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Main />
+    <Footer class="footer" />
   </div>
 </template>
 
 <script>
 import Main from "./components/Main.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "app",
   components: {
-    Main
+    Main,
+    Footer
   }
 };
 </script>
@@ -25,6 +28,13 @@ export default {
   );
   height: 100vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.footer {
+  position: absolute;
 }
 
 body {
