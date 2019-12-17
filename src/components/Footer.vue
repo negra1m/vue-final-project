@@ -3,9 +3,9 @@
     <img width="130px" src="../assets/rick waiting.gif" />
     <div class="description">
       Developed by
-      <a href="https//github.com/negra1m">Negrão</a>
+      <a target="blank" href="https://github.com/negra1m">Vinícius Negrão</a>
       and
-      <a href="https//github.com/gfrank">Gfrank</a>.
+      <a target="blank" href="https://https://github.com/gustavofreitas">Gustavo Freitas</a>.
     </div>
   </section>
 </template>

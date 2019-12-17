@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <HeaderMenu class="header" />
     <div class="content">
       <div class="logo">
         <img src="../assets/portal.gif" />
@@ -14,8 +15,12 @@
 </template>
 
 <script>
+import HeaderMenu from "../components/HeaderMenu";
 export default {
-  name: "Main"
+  name: "Main",
+  components: {
+    HeaderMenu
+  }
 };
 </script>
 
@@ -33,6 +38,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .logo {
