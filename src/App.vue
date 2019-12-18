@@ -1,21 +1,12 @@
 <template>
   <div id="app">
-    <Main />
-    <Footer class="footer" />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Main from "./components/Main.vue";
-import Footer from "./components/Footer.vue";
-
 export default {
-  name: "app",
-  components: {
-    Main,
-    Footer
-  }
+  name: "app"
 };
 </script>
 
@@ -29,18 +20,17 @@ export default {
   );
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.footer {
-  position: absolute;
 }
 
 body {
   font-family: "Courier New", Courier, monospace;
   margin: 0;
   padding: 0;
+}
+
+.header-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 </style>

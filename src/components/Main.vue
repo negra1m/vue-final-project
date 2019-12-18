@@ -3,23 +3,36 @@
     <HeaderMenu class="header" />
     <div class="content">
       <div class="logo">
-        <img src="../assets/portal.gif" />
-        <button class="start">START</button>
+        <img src="assets/portal.gif" />
+        <button class="start" @click="playSound()">START</button>
       </div>
       <div class="text">
         <h2>The Rick Morty`s API consumer</h2>
         <h4>Developed in Vue</h4>
       </div>
     </div>
+    <Footer class="footer" />
   </div>
 </template>
 
 <script>
 import HeaderMenu from "../components/HeaderMenu";
+import Footer from "../components/Footer";
+
 export default {
   name: "Main",
   components: {
-    HeaderMenu
+    HeaderMenu,
+    Footer
+  },
+  methods: {
+    playSound() {
+      var audio = new Audio("assets/i-m-pickle-riick.mp3");
+      audio.play();
+      setTimeout(() => {
+        this.$router.push({ name: "Characters" });
+      }, 3000);
+    }
   }
 };
 </script>
@@ -40,10 +53,9 @@ export default {
   align-items: center;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
+.footer {
+  position: absolute;
+  bottom: 0;
 }
 
 .logo {
