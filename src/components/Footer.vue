@@ -1,6 +1,6 @@
 <template>
   <section class="footer">
-    <img width="130px" src="../assets/rick waiting.gif" />
+    <img width="130px" src="assets/rick waiting.gif" />
     <div class="description">
       Developed by
       <a target="blank" href="https://github.com/negra1m">Vinícius Negrão</a>

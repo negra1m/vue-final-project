@@ -18,6 +18,7 @@ export default {
   height: 50px;
   width: 100vw;
   border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+  background-color: #0b3348;
 }
 
 a {

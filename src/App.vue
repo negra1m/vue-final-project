@@ -18,7 +18,7 @@ export default {
     rgba(51, 176, 201, 1) 1%,
     rgba(9, 52, 73, 1) 84%
   );
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 }
 

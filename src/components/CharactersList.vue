@@ -3,31 +3,31 @@
     <HeaderMenu />
     <div class="list">
       <ul>
-        <li>
+        <li :key="item.id" v-for="item in list">
           <div class="card">
             <div class="card-image">
-              <img src="test-list.jpeg" width="200px" style="border-radius: 50%;" />
+              <img v-bind:src="item.image" height="200px" width="200px" style="border-radius: 50%;" />
             </div>
             <div class="description">
               <div class="header">
                 <p>
                   Name:
-                  <span>Rick Sanchez</span>
+                  <span>{{item.name}}</span>
                 </p>
-                <p>ID: #1</p>
+                <p>ID: {{item.id}}</p>
               </div>
               <div class="others">
                 <p>
                   Origin:
-                  <span>Earth</span>
+                  <span>{{item.location.name}}</span>
                 </p>
                 <p>
                   Status:
-                  <span>Alive</span>
+                  <span>{{item.status}}</span>
                 </p>
                 <p>
-                  Species:
-                  <span>Human</span>
+                  Specie:
+                  <span>{{item.species}}</span>
                 </p>
               </div>
             </div>
@@ -40,11 +40,33 @@
 
 <script>
 import HeaderMenu from "../components/HeaderMenu";
-
 export default {
   name: "CharactersList",
   components: {
     HeaderMenu
+  },
+  data() {
+    return {
+      list: null,
+      url: String,
+      loading: true
+    };
+  },
+  methods: {
+    loadMore() {
+      this.$axios.get(this.url).then(response => {
+        this.list = response.results;
+        this.url = response.info.next;
+      });
+    }
+  },
+  mounted: function() {
+    this.loading = true;
+    this.$axios
+      .get("https://rickandmortyapi.com/api/character")
+      .then(response => {
+        return (this.list = response.data.results);
+      });
   }
 };
 </script>
