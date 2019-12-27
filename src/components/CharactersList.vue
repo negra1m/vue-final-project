@@ -34,6 +34,11 @@
           </div>
         </li>
       </ul>
+      <div v-if="show" class="show-more">
+        <button @click="loadMore()">
+          <img class="chevron" src="assets/chevron-down.svg" alt="load more characters" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -47,16 +52,21 @@ export default {
   },
   data() {
     return {
-      list: null,
+      list: [],
       url: String,
-      loading: true
+      loading: true,
+      show: true
     };
   },
   methods: {
     loadMore() {
       this.$axios.get(this.url).then(response => {
-        this.list = response.results;
-        this.url = response.info.next;
+        this.list = this.list.concat(response.data.results);
+        if (response.data.info.next) {
+          this.url = response.data.info.next;
+        } else {
+          this.show = false;
+        }
       });
     }
   },
@@ -65,7 +75,10 @@ export default {
     this.$axios
       .get("https://rickandmortyapi.com/api/character")
       .then(response => {
-        return (this.list = response.data.results);
+        return (
+          (this.list = response.data.results),
+          (this.url = response.data.info.next)
+        );
       });
   }
 };
@@ -103,6 +116,28 @@ export default {
 .header {
   display: flex;
   justify-content: space-between;
+}
+
+.show-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.show-more > button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.chevron {
+  width: 120px;
+  height: auto;
 }
 
 p > span {
