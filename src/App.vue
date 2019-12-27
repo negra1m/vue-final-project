@@ -26,6 +26,7 @@ body {
   font-family: "Courier New", Courier, monospace;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .header-menu {
