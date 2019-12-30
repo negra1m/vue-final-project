@@ -3,6 +3,7 @@
     <router-link to="/main">Main</router-link>
     <router-link to="/characters">Characters</router-link>
     <router-link to="/episodes">Episodes</router-link>
+    <router-link to="/locations">Locations</router-link>
   </nav>
 </template>
 
