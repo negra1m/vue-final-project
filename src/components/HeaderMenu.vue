@@ -2,6 +2,7 @@
   <nav class="header-menu">
     <router-link to="/main">Main</router-link>
     <router-link to="/characters">Characters</router-link>
+    <router-link to="/episodes">Episodes</router-link>
   </nav>
 </template>
 

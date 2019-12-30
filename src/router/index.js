@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
 import CharactersList from '@/components/CharactersList'
+import EpisodesList from '@/components/EpisodesList'
 
 Vue.use(Router)
 export default new Router({
@@ -20,6 +21,11 @@ export default new Router({
             path: '/characters',
             name: 'Characters',
             component: CharactersList
+        },
+        {
+            path: '/episodes',
+            name: 'Episodes',
+            component: EpisodesList
         }
     ]
 })
