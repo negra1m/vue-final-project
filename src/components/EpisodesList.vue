@@ -22,8 +22,13 @@
                   Episode:
                   <span>{{item.episode}}</span>
                 </p>
+                <p>
+                  Characters:
+                  <span><CharactersImageGallery :ids="getCharacterIds(item.characters)"/></span>
+                </p>
               </div>
             </div>
+
           </div>
         </li>
       </ul>
@@ -38,10 +43,12 @@
 
 <script>
 import HeaderMenu from "../components/HeaderMenu";
+import CharactersImageGallery from "../components/CharactersImageGallery";
 export default {
   name: "EpisodesList",
   components: {
-    HeaderMenu
+    HeaderMenu,
+    CharactersImageGallery
   },
   data() {
     return {
@@ -61,6 +68,15 @@ export default {
           this.show = false;
         }
       });
+    },
+    getCharacterIds(urlList){
+      let result = [];
+      urlList.forEach(url => {
+        let id = url.substr(url.lastIndexOf('/') + 1);
+        result.push(id);
+      });
+
+      return result.slice(2, 11).join(',');
     }
   },
   mounted: function() {
