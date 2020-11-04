@@ -1,18 +1,20 @@
 <template>
   <section class="footer">
-    <img width="130px" src="assets/rick waiting.gif" />
+    <img width="250px" src="assets/rick waiting.gif" />
     <div class="description">
       Developed by
       <a target="blank" href="https://github.com/negra1m">Vinícius Negrão</a>
       and
-      <a target="blank" href="https://https://github.com/gustavofreitas">Gustavo Freitas</a>.
+      <a target="blank" href="https://https://github.com/gustavofreitas"
+        >Gustavo Freitas</a
+      >.
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
 };
 </script>
 <style scoped>
@@ -25,8 +27,9 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  height: 300px;
+  height: 400px;
   width: 100%;
+  z-index: 0;
 }
 
 .description {

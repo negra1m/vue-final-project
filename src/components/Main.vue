@@ -1,14 +1,14 @@
 <template>
   <div class="main">
-    <HeaderMenu class="header" />
+    <HeaderMenu />
     <div class="content">
+      <div class="text">
+        <h1>Rick n' Morty's list</h1>
+        <p>The master guide of Ricky & Morty Episodes and Characters</p>
+      </div>
       <div class="logo">
         <img src="assets/portal.gif" />
         <button class="start" @click="playSound()">START</button>
-      </div>
-      <div class="text">
-        <h2>The Rick Morty`s API consumer</h2>
-        <h4>Developed in Vue</h4>
       </div>
     </div>
     <Footer class="footer" />
@@ -16,14 +16,14 @@
 </template>
 
 <script>
-import HeaderMenu from "../components/HeaderMenu";
 import Footer from "../components/Footer";
+import HeaderMenu from "../components/HeaderMenu";
 
 export default {
   name: "Main",
   components: {
+    Footer,
     HeaderMenu,
-    Footer
   },
   methods: {
     playSound() {
@@ -32,25 +32,46 @@ export default {
       setTimeout(() => {
         this.$router.push({ name: "Characters" });
       }, 3000);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@font-face {
+  font-family: "KuchenHollow";
+  src: local("KuchenHollow"),
+    url(../fonts/kuchen/KuchenHollow.ttf) format("truetype");
+}
+
 .text {
   color: #faff64;
   padding: 15px 15px;
   position: absolute;
-  margin-top: 160px;
+  align-self: flex-start;
   text-align: center;
+  font-family: "KuchenHollow";
+}
+
+.text > p {
+  font-size: 20px;
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 100;
+}
+
+.text > h1 {
+  margin: 0 0 0 0;
+  font-size: 7.5rem;
+  font-weight: 400;
 }
 
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .footer {
@@ -59,10 +80,14 @@ export default {
 }
 
 .logo {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10rem 0 0 0;
+}
+
+.logo > img {
+  width: 400px;
 }
 
 .start {
@@ -72,7 +97,7 @@ export default {
   border: none;
   padding: 0;
   font: inherit;
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 600;
   cursor: pointer;
   outline: inherit;
@@ -92,9 +117,23 @@ export default {
   padding: 0px;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 414px) {
+  .text {
+    font-size: 30px;
+  }
+
+  .logo > img {
+    width: 250px;
+  }
+
+  .start {
+    font-size: 2.5em;
+  }
 }
 
 @-webkit-keyframes rotate-center {

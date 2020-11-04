@@ -9,18 +9,18 @@
               <div class="header">
                 <p>
                   Name:
-                  <span>{{item.name}}</span>
+                  <span>{{ item.name }}</span>
                 </p>
-                <p>ID: {{item.id}}</p>
+                <p>ID: {{ item.id }}</p>
               </div>
               <div class="others">
                 <p>
                   Type:
-                  <span>{{item.type}}</span>
+                  <span>{{ item.type }}</span>
                 </p>
                 <p>
                   Dimention:
-                  <span>{{item.dimension}}</span>
+                  <span>{{ item.dimension }}</span>
                 </p>
               </div>
             </div>
@@ -29,7 +29,11 @@
       </ul>
       <div v-if="show" class="show-more">
         <button @click="loadMore()">
-          <img class="chevron" src="assets/chevron-down.svg" alt="load more characters" />
+          <img
+            class="chevron"
+            src="assets/chevron-down.svg"
+            alt="load more characters"
+          />
         </button>
       </div>
     </div>
@@ -41,19 +45,19 @@ import HeaderMenu from "../components/HeaderMenu";
 export default {
   name: "LocationsList",
   components: {
-    HeaderMenu
+    HeaderMenu,
   },
   data() {
     return {
       list: [],
       url: String,
       loading: true,
-      show: true
+      show: true,
     };
   },
   methods: {
     loadMore() {
-      this.$axios.get(this.url).then(response => {
+      this.$axios.get(this.url).then((response) => {
         this.list = this.list.concat(response.data.results);
         if (response.data.info.next) {
           this.url = response.data.info.next;
@@ -61,19 +65,19 @@ export default {
           this.show = false;
         }
       });
-    }
+    },
   },
-  mounted: function() {
+  mounted: function () {
     this.loading = true;
     this.$axios
       .get("https://rickandmortyapi.com/api/location")
-      .then(response => {
+      .then((response) => {
         return (
           (this.list = response.data.results),
           (this.url = response.data.info.next)
         );
       });
-  }
+  },
 };
 </script>
 <style scoped>

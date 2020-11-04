@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "app"
+  name: "app",
 };
 </script>
 
@@ -15,8 +15,8 @@ export default {
   background: rgb(51, 176, 201);
   background: radial-gradient(
     circle,
-    rgba(51, 176, 201, 1) 1%,
-    rgba(9, 52, 73, 1) 84%
+    rgba(51, 176, 201, 1) 40%,
+    rgb(35, 122, 139) 95% /* rgba(9, 52, 73, 1) 84% */
   );
   height: 100%;
   width: 100vw;
