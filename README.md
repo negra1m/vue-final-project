@@ -10,6 +10,6 @@ This website was done to make sure we are now able to create any Vue SAP.
  `git clone https://github.com/negra1m/vue-final-project`
 2. Enter into the repository: `cd vue-final-project` 
 3. Install dependencies `npm install`.
-4. Then run `npm run serve`.
+4. Then run `npm run start`.
 
 The App will start into localhost:8080
