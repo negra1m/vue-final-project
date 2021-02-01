@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderMenu />
+    <HeaderMenu title="Episodes"/>
     <div class="list">
       <ul>
         <li :key="item.id" v-for="item in list">

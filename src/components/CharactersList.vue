@@ -1,20 +1,20 @@
 <template>
   <div>
-    <HeaderMenu />
+    <HeaderMenu title="Characters"/>
     <div class="list">
       <ul>
         <li :key="item.id" v-for="item in list">
           <div class="card">
             <div class="card-image">
-              <img v-bind:src="item.image" height="200px" width="200px" style="border-radius: 50%;" />
+              <img class="shine" v-bind:src="item.image" height="200px" width="200px" />
             </div>
-            <div class="description">
+            <div class="description shine">
               <div class="header">
-                <p>
+                <p class="name">
                   Name:
                   <span>{{item.name}}</span>
                 </p>
-                <p>ID: {{item.id}}</p>
+                <p class="id">#{{item.id}}</p>
               </div>
               <div class="others">
                 <p>
@@ -85,17 +85,20 @@ export default {
 </script>
 <style scoped>
 .card {
-  border-radius: 2px;
-  border: rgb(88, 209, 233) 1px solid;
-  background-color: transparent;
+  box-shadow: inset 150px 10px 140px 80px rgba(0,0,0,0.75);
+  border-radius: 0.5rem;
+  background: linear-gradient(to right, #000000, #1b9dd1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   justify-content: space-around;
   min-height: 200px;
-  margin-bottom: 10px;
-  padding: 20px 20px;
+  margin-bottom: 4rem;
+  min-width: 35rem;
+  padding: 0 20px 0 0px;
+  filter: blur(0.03rem) saturate(0.7) contrast(1.2) brightness(0.9);
 }
 
 .card-image {
+  box-shadow: inset 150px 10px 140px 80px rgba(0,0,0,0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,14 +106,46 @@ export default {
   margin-right: 2em;
 }
 
-.list {
-  padding: 7em 2em;
+.card-image > img {
+  height: -webkit-fill-available;
+  width: 250px;
 }
+
+.card-image > img:hover {
+  filter: none;
+}
+
+.header > .id  {
+    position: relative;
+    float: right;
+}
+
+.header > .name {
+  font-size: 20px;
+}
+
+.list {
+  padding: 10em 7em;
+  background: linear-gradient(180deg, rgba(14,14,14,1) 16%, rgba(30,32,70,1) 33%, rgba(73,68,100,1) 59%, rgba(52,96,127,1) 66%, rgba(137,167,119,1) 88%, rgba(198,197,137,1) 100%);
+}
+
+
 
 .description {
   color: white;
   flex: 3;
-  font-size: 20px;
+  font-size: 1rem;
+  font-weight: 900;
+  filter: brightness(0.3);  
+}
+
+.shine {
+  filter: brightness(0.3);
+  transition: all 2s ease;
+}
+
+.shine:hover {
+  filter: brightness(1);
 }
 
 .header {
@@ -140,6 +175,11 @@ export default {
   height: auto;
 }
 
+p {
+  font-size: 14px;
+  font-family: 'Public Sans', sans-serif;
+}
+
 p > span {
   font-weight: bold;
   color: #faff64;
@@ -154,4 +194,6 @@ li {
   padding: 0;
   margin: 0;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100&display=swap');
 </style>

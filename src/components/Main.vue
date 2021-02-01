@@ -1,9 +1,8 @@
 <template>
   <div class="main">
-    <HeaderMenu />
+    <HeaderMenu title="Rick n' Morty's list"/>
     <div class="content">
       <div class="text">
-        <h1>Rick n' Morty's list</h1>
         <p>The master guide of Ricky & Morty Episodes and Characters</p>
       </div>
       <div class="logo">
@@ -48,7 +47,6 @@ export default {
 .text {
   color: #faff64;
   padding: 15px 15px;
-  position: absolute;
   align-self: flex-start;
   text-align: center;
   font-family: "KuchenHollow";
@@ -62,7 +60,7 @@ export default {
 }
 
 .text > h1 {
-  margin: 0 0 0 0;
+  margin: 0 4rem 0 0;
   font-size: 7.5rem;
   font-weight: 400;
 }
@@ -83,11 +81,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10rem 0 0 0;
-}
-
-.logo > img {
-  width: 400px;
+  z-index: 10;
 }
 
 .start {
@@ -113,16 +107,13 @@ export default {
 }
 
 .content {
-  margin: 0px;
-  padding: 0px;
-  height: 100vh;
+  height: 25rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  z-index: 1;
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 510px) {
   .text {
     font-size: 30px;
   }

@@ -1,5 +1,7 @@
-<template>
-  <div class="menu__position">
+<template >
+  <div class="header__content text">
+    <h1>{{title}}</h1>
+    <div class="menu__position">
     <header class="header">
       <nav class="header--nav">
         <ul class="header--navbar">
@@ -91,6 +93,7 @@
         </ul>
       </nav>
     </header>
+    </div>
   </div>
   <!-- 
   <nav class="header-menu">
@@ -109,6 +112,7 @@ export default {
       menuShow: false,
     };
   },
+  props:['title'],
   methods: {
     go(route) {
       this.$router.push(route);
@@ -140,15 +144,32 @@ hr {
   margin: 1.5rem 0;
   border-top: 1px solid var(--color-gray);
 }
+
+.header__content {
+  background: #000;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+}
+
 .menu__position {
-  position: fixed;
-  top: 0;
-  right: 0;
+  position: relative;
+  top: 1rem;
+  right: 1rem;
   z-index: 20;
 }
 
+.header__content > h1 {
+  top: 1rem;
+  left: 1rem;
+  margin-bottom: 30px;
+
+}
+
 .header {
-  padding: 1rem 2rem 1rem 2rem;
+  position: absolute;
+
 }
 .header--nav {
   position: relative;

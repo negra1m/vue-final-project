@@ -1,6 +1,6 @@
 <template>
   <section class="footer">
-    <img width="250px" src="assets/rick waiting.gif" />
+    <img src="assets/rick waiting.gif" />
     <div class="description">
       Developed by
       <a target="blank" href="https://github.com/negra1m">Vinícius Negrão</a>
@@ -32,6 +32,12 @@ a {
   z-index: 0;
 }
 
+@media only screen and (max-width: 510px) {
+.footer > img {
+  width: 12rem;
+  transition: all 2s ease;
+}
+}
 .description {
   color: white;
 }
