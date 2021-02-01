@@ -95,13 +95,6 @@
     </header>
     </div>
   </div>
-  <!-- 
-  <nav class="header-menu">
-    
-    <router-link to="/characters">Characters</router-link>
-    <router-link to="/episodes">Episodes</router-link>
-    <router-link to="/locations">Locations</router-link>
-  </nav> -->
 </template>
 
 <script>
@@ -147,6 +140,7 @@ hr {
 
 .header__content {
   background: #000;
+  position: fixed;
   width: 100%;
   z-index: 10;
   display: flex;
@@ -168,8 +162,10 @@ hr {
 }
 
 .header {
-  position: absolute;
-
+      position: absolute;
+    z-index: 20;
+    top: 3%;
+    right: 5%;
 }
 .header--nav {
   position: relative;

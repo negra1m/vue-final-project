@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-content">
     <HeaderMenu title="Characters"/>
     <div class="list">
       <ul>
@@ -8,7 +8,7 @@
             <div class="card-image">
               <img class="shine" v-bind:src="item.image" height="200px" width="200px" />
             </div>
-            <div class="description shine">
+            <div class="description">
               <div class="header">
                 <p class="name">
                   Name:
@@ -84,6 +84,13 @@ export default {
 };
 </script>
 <style scoped>
+
+.main-content {
+  display: flex;
+  align-content: center;
+  width: 100%;
+}
+
 .card {
   box-shadow: inset 150px 10px 140px 80px rgba(0,0,0,0.75);
   border-radius: 0.5rem;
@@ -93,6 +100,8 @@ export default {
   min-height: 200px;
   margin-bottom: 4rem;
   min-width: 35rem;
+  width: 50rem;
+  max-width: 80rem;
   padding: 0 20px 0 0px;
   filter: blur(0.03rem) saturate(0.7) contrast(1.2) brightness(0.9);
 }
@@ -125,18 +134,24 @@ export default {
 }
 
 .list {
-  padding: 10em 7em;
+  width: 100%;
+  padding: 12em 7em;
   background: linear-gradient(180deg, rgba(14,14,14,1) 16%, rgba(30,32,70,1) 33%, rgba(73,68,100,1) 59%, rgba(52,96,127,1) 66%, rgba(137,167,119,1) 88%, rgba(198,197,137,1) 100%);
 }
 
-
+.list {
+  background-image: url('/assets/paisagem.png');
+  background-repeat: no-repeat;
+  background-attachment: absolute;
+  background-position: bottom; 
+  background-size:contain;
+}
 
 .description {
   color: white;
   flex: 3;
   font-size: 1rem;
   font-weight: 900;
-  filter: brightness(0.3);  
 }
 
 .shine {
@@ -193,6 +208,13 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100&display=swap');

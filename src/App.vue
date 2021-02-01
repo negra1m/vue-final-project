@@ -78,10 +78,5 @@ body {
   font-weight: 400;
   min-width: none;
 }
-
-.menu__position {
-  top: -1rem;
-  right: 0;
-}
 }
 </style>
