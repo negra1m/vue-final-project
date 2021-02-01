@@ -38,6 +38,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100&display=swap');
+
 @font-face {
   font-family: "KuchenHollow";
   src: local("KuchenHollow"),
@@ -49,14 +52,16 @@ export default {
   padding: 15px 15px;
   align-self: flex-start;
   text-align: center;
-  font-family: "KuchenHollow";
 }
 
 .text > p {
-  font-size: 20px;
-  font-family: "Roboto";
-  font-style: italic;
-  font-weight: 100;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  font-family: 'Public Sans', sans-serif;
+  /* text-shadow: 0.15rem 0.15rem #fff ; */
+  background-color: #000;
+  padding: 1rem 2rem;
 }
 
 .text > h1 {
@@ -70,6 +75,12 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url('/assets/paisagem.png');
+  background-repeat: no-repeat;
+  background-attachment: absolute;
+  background-position: bottom; 
+  background-size: cover;
+  background-size: ;
 }
 
 .footer {
@@ -107,7 +118,7 @@ export default {
 }
 
 .content {
-  height: 25rem;
+  height: 35rem;
   display: flex;
   align-items: center;
   justify-content: space-around;

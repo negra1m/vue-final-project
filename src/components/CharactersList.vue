@@ -217,5 +217,4 @@ li {
   width: 100%;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100&display=swap');
 </style>
